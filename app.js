@@ -138,24 +138,25 @@
 
     // ============ MAIN THEME (32-80) ============
     const mainTheme = [
-        { note: 'A3', startBeat: 32, duration: 4, velocity: 0.28 },
-        { note: 'A2', startBeat: 32, duration: 4, velocity: 0.22 }, // Octave bass doubling
-        { note: 'E4', startBeat: 32, duration: 4, velocity: 0.22 },
-        { note: 'C4', startBeat: 32, duration: 4, velocity: 0.18 }, // Added chord tone
-        { note: 'E5', startBeat: 32, duration: 1.5, velocity: 0.52 },
+        { note: 'A3', startBeat: 32, duration: 4, velocity: 0.38 },
+        { note: 'A2', startBeat: 32, duration: 4, velocity: 0.32 }, // Octave bass doubling
+        { note: 'E4', startBeat: 32, duration: 4, velocity: 0.32 },
+        { note: 'C4', startBeat: 32, duration: 4, velocity: 0.28 }, // Added chord tone
+        { note: 'E5', startBeat: 32, duration: 1.5, velocity: 0.67 },
         { note: 'A4', startBeat: 32, duration: 1.5, velocity: 0.35 }, // Added chord tone
         { note: 'D5', startBeat: 33.5, duration: 0.5, velocity: 0.42 },
         { note: 'C5', startBeat: 34, duration: 1, velocity: 0.48 },
         { note: 'G4', startBeat: 34, duration: 1, velocity: 0.35 }, // Added chord tone
+        { note: 'E5', startBeat: 34, duration: 0.25, velocity: 0.85 }, // Sforzando accent
         { note: 'B4', startBeat: 35, duration: 0.5, velocity: 0.4 },
         { note: 'A4', startBeat: 35.5, duration: 0.5, velocity: 0.38 },
         { note: 'C6', startBeat: 35.5, duration: 0.25, velocity: 0.55 }, // Dramatic high leap
 
-        { note: 'G3', startBeat: 36, duration: 4, velocity: 0.28 },
-        { note: 'G2', startBeat: 36, duration: 4, velocity: 0.22 }, // Octave bass doubling
-        { note: 'D4', startBeat: 36, duration: 4, velocity: 0.22 },
-        { note: 'B3', startBeat: 36, duration: 4, velocity: 0.18 }, // Added chord tone
-        { note: 'G4', startBeat: 36, duration: 0.75, velocity: 0.42 },
+        { note: 'G3', startBeat: 36, duration: 4, velocity: 0.40 },
+        { note: 'G2', startBeat: 36, duration: 4, velocity: 0.34 }, // Octave bass doubling
+        { note: 'D4', startBeat: 36, duration: 4, velocity: 0.34 },
+        { note: 'B3', startBeat: 36, duration: 4, velocity: 0.30 }, // Added chord tone
+        { note: 'G4', startBeat: 36, duration: 0.75, velocity: 0.55 },
         { note: 'D4', startBeat: 36, duration: 0.75, velocity: 0.32 }, // Added chord tone
         { note: 'A4', startBeat: 36.75, duration: 0.25, velocity: 0.38 },
         { note: 'B4', startBeat: 37, duration: 1.5, velocity: 0.5 },
@@ -166,11 +167,11 @@
         { note: 'D5', startBeat: 39.5, duration: 0.5, velocity: 0.42 },
         { note: 'G5', startBeat: 39.5, duration: 0.25, velocity: 0.55 }, // Dramatic high leap
 
-        { note: 'F3', startBeat: 40, duration: 4, velocity: 0.3 },
-        { note: 'F2', startBeat: 40, duration: 4, velocity: 0.24 }, // Octave bass doubling
-        { note: 'A3', startBeat: 40, duration: 4, velocity: 0.25 },
-        { note: 'C4', startBeat: 40, duration: 4, velocity: 0.2 }, // Added chord tone
-        { note: 'E5', startBeat: 40, duration: 0.75, velocity: 0.52 },
+        { note: 'F3', startBeat: 40, duration: 4, velocity: 0.42 },
+        { note: 'F2', startBeat: 40, duration: 4, velocity: 0.36 }, // Octave bass doubling
+        { note: 'A3', startBeat: 40, duration: 4, velocity: 0.37 },
+        { note: 'C4', startBeat: 40, duration: 4, velocity: 0.32 }, // Added chord tone
+        { note: 'E5', startBeat: 40, duration: 0.75, velocity: 0.65 },
         { note: 'C5', startBeat: 40, duration: 0.75, velocity: 0.38 }, // Added chord tone
         { note: 'F5', startBeat: 40.75, duration: 0.25, velocity: 0.48 },
         { note: 'G5', startBeat: 41, duration: 1, velocity: 0.58 },
@@ -178,16 +179,17 @@
         { note: 'E5', startBeat: 41, duration: 1, velocity: 0.45 }, // Added chord tone
         { note: 'A5', startBeat: 41.5, duration: 0.5, velocity: 0.65 }, // Dramatic high leap
         { note: 'F5', startBeat: 42, duration: 0.5, velocity: 0.5 },
+        { note: 'G5', startBeat: 42, duration: 0.25, velocity: 0.88 }, // Sforzando accent
         { note: 'E5', startBeat: 42.5, duration: 0.5, velocity: 0.45 },
         { note: 'D5', startBeat: 43, duration: 1, velocity: 0.48 },
         { note: 'A4', startBeat: 43, duration: 1, velocity: 0.35 }, // Added chord tone
         { note: 'F4', startBeat: 43, duration: 1, velocity: 0.32 }, // Added chord tone
 
-        { note: 'E3', startBeat: 44, duration: 4, velocity: 0.28 },
-        { note: 'E2', startBeat: 44, duration: 4, velocity: 0.22 }, // Octave bass doubling
-        { note: 'G#3', startBeat: 44, duration: 4, velocity: 0.22 },
-        { note: 'B3', startBeat: 44, duration: 4, velocity: 0.18 }, // Added chord tone
-        { note: 'C5', startBeat: 44, duration: 1.5, velocity: 0.5 },
+        { note: 'E3', startBeat: 44, duration: 4, velocity: 0.40 },
+        { note: 'E2', startBeat: 44, duration: 4, velocity: 0.34 }, // Octave bass doubling
+        { note: 'G#3', startBeat: 44, duration: 4, velocity: 0.34 },
+        { note: 'B3', startBeat: 44, duration: 4, velocity: 0.30 }, // Added chord tone
+        { note: 'C5', startBeat: 44, duration: 1.5, velocity: 0.62 },
         { note: 'E4', startBeat: 44, duration: 1.5, velocity: 0.35 }, // Added chord tone
         { note: 'G#4', startBeat: 44, duration: 1.5, velocity: 0.38 }, // Added chord tone
         { note: 'B4', startBeat: 45.5, duration: 0.5, velocity: 0.42 },
@@ -197,11 +199,11 @@
         { note: 'C4', startBeat: 46.5, duration: 1.5, velocity: 0.32 }, // Added chord tone
         { note: 'A5', startBeat: 47, duration: 0.5, velocity: 0.58 }, // Dramatic high leap
 
-        { note: 'A3', startBeat: 48, duration: 4, velocity: 0.3 },
-        { note: 'A2', startBeat: 48, duration: 4, velocity: 0.24 }, // Octave bass doubling
-        { note: 'E4', startBeat: 48, duration: 4, velocity: 0.25 },
-        { note: 'C4', startBeat: 48, duration: 4, velocity: 0.2 },
-        { note: 'E5', startBeat: 48, duration: 0.5, velocity: 0.55 },
+        { note: 'A3', startBeat: 48, duration: 4, velocity: 0.42 },
+        { note: 'A2', startBeat: 48, duration: 4, velocity: 0.36 }, // Octave bass doubling
+        { note: 'E4', startBeat: 48, duration: 4, velocity: 0.37 },
+        { note: 'C4', startBeat: 48, duration: 4, velocity: 0.32 },
+        { note: 'E5', startBeat: 48, duration: 0.5, velocity: 0.68 },
         { note: 'A4', startBeat: 48, duration: 0.5, velocity: 0.38 }, // Added chord tone
         { note: 'F5', startBeat: 48.5, duration: 0.25, velocity: 0.48 },
         { note: 'E5', startBeat: 48.75, duration: 0.75, velocity: 0.52 },
@@ -209,6 +211,7 @@
         { note: 'C5', startBeat: 50, duration: 0.75, velocity: 0.5 },
         { note: 'A4', startBeat: 50, duration: 0.75, velocity: 0.35 }, // Added chord tone
         { note: 'E4', startBeat: 50, duration: 0.75, velocity: 0.32 }, // Added chord tone
+        { note: 'A5', startBeat: 50, duration: 0.25, velocity: 0.9 }, // Sforzando accent
         { note: 'D5', startBeat: 50.75, duration: 0.25, velocity: 0.42 },
         { note: 'B4', startBeat: 51, duration: 0.5, velocity: 0.45 },
         { note: 'A4', startBeat: 51.5, duration: 0.5, velocity: 0.42 },
@@ -231,11 +234,11 @@
         { note: 'G4', startBeat: 55, duration: 1, velocity: 0.35 }, // Added chord tone
         { note: 'E4', startBeat: 55, duration: 1, velocity: 0.32 }, // Added chord tone
 
-        { note: 'F3', startBeat: 56, duration: 4, velocity: 0.32 },
-        { note: 'F2', startBeat: 56, duration: 4, velocity: 0.26 }, // Octave bass doubling
-        { note: 'A3', startBeat: 56, duration: 4, velocity: 0.28 },
-        { note: 'C4', startBeat: 56, duration: 4, velocity: 0.22 },
-        { note: 'E5', startBeat: 56, duration: 0.5, velocity: 0.58 },
+        { note: 'F3', startBeat: 56, duration: 4, velocity: 0.44 },
+        { note: 'F2', startBeat: 56, duration: 4, velocity: 0.38 }, // Octave bass doubling
+        { note: 'A3', startBeat: 56, duration: 4, velocity: 0.40 },
+        { note: 'C4', startBeat: 56, duration: 4, velocity: 0.34 },
+        { note: 'E5', startBeat: 56, duration: 0.5, velocity: 0.70 },
         { note: 'A4', startBeat: 56, duration: 0.5, velocity: 0.42 }, // Added chord tone
         { note: 'C5', startBeat: 56, duration: 0.5, velocity: 0.45 }, // Added chord tone
         { note: 'G5', startBeat: 56.5, duration: 0.5, velocity: 0.62 },
@@ -244,6 +247,7 @@
         { note: 'C5', startBeat: 57, duration: 1, velocity: 0.45 }, // Added chord tone
         { note: 'C6', startBeat: 57.5, duration: 0.5, velocity: 0.72 }, // Dramatic high leap
         { note: 'G5', startBeat: 58, duration: 0.5, velocity: 0.58 },
+        { note: 'C6', startBeat: 58, duration: 0.25, velocity: 0.92 }, // Sforzando accent
         { note: 'F5', startBeat: 58.5, duration: 0.5, velocity: 0.52 },
         { note: 'E5', startBeat: 59, duration: 1, velocity: 0.55 },
         { note: 'C5', startBeat: 59, duration: 1, velocity: 0.4 }, // Added chord tone
@@ -264,11 +268,11 @@
         { note: 'E5', startBeat: 62.5, duration: 0.5, velocity: 0.58 }, // Dramatic leap
         { note: 'A5', startBeat: 63, duration: 0.5, velocity: 0.62 }, // Dramatic high leap
 
-        { note: 'A3', startBeat: 64, duration: 8, velocity: 0.25 },
-        { note: 'A2', startBeat: 64, duration: 8, velocity: 0.2 }, // Octave bass doubling
-        { note: 'E4', startBeat: 64, duration: 8, velocity: 0.22 },
-        { note: 'C4', startBeat: 64, duration: 8, velocity: 0.18 }, // Added chord tone
-        { note: 'A4', startBeat: 64, duration: 2, velocity: 0.4 },
+        { note: 'A3', startBeat: 64, duration: 8, velocity: 0.37 },
+        { note: 'A2', startBeat: 64, duration: 8, velocity: 0.32 }, // Octave bass doubling
+        { note: 'E4', startBeat: 64, duration: 8, velocity: 0.34 },
+        { note: 'C4', startBeat: 64, duration: 8, velocity: 0.30 }, // Added chord tone
+        { note: 'A4', startBeat: 64, duration: 2, velocity: 0.52 },
         { note: 'E4', startBeat: 64, duration: 2, velocity: 0.28 }, // Added chord tone
         { note: 'C4', startBeat: 64, duration: 2, velocity: 0.25 }, // Added chord tone
         { note: 'E5', startBeat: 65, duration: 0.5, velocity: 0.48 }, // Dramatic leap
@@ -284,11 +288,11 @@
         { note: 'E4', startBeat: 71, duration: 1, velocity: 0.32 }, // Added chord tone
         { note: 'C4', startBeat: 71, duration: 1, velocity: 0.28 }, // Added chord tone
 
-        { note: 'F3', startBeat: 72, duration: 8, velocity: 0.28 },
-        { note: 'F2', startBeat: 72, duration: 8, velocity: 0.22 }, // Octave bass doubling
-        { note: 'C4', startBeat: 72, duration: 8, velocity: 0.25 },
-        { note: 'A3', startBeat: 72, duration: 8, velocity: 0.2 }, // Added chord tone
-        { note: 'A4', startBeat: 72, duration: 1, velocity: 0.45 },
+        { note: 'F3', startBeat: 72, duration: 8, velocity: 0.40 },
+        { note: 'F2', startBeat: 72, duration: 8, velocity: 0.34 }, // Octave bass doubling
+        { note: 'C4', startBeat: 72, duration: 8, velocity: 0.37 },
+        { note: 'A3', startBeat: 72, duration: 8, velocity: 0.32 }, // Added chord tone
+        { note: 'A4', startBeat: 72, duration: 1, velocity: 0.58 },
         { note: 'F4', startBeat: 72, duration: 1, velocity: 0.32 }, // Added chord tone
         { note: 'C4', startBeat: 72, duration: 1, velocity: 0.28 }, // Added chord tone
         { note: 'C5', startBeat: 73, duration: 1, velocity: 0.48 },
@@ -856,107 +860,255 @@
     ];
 
     // ============ VARIATION (224-272) ============
+    // ============ VARIATION (224-272) - VIRTUOSIC & CRAZY ============
     const variation = [
-        { note: 'E2', startBeat: 224, duration: 4, velocity: 0.55 },
-        { note: 'B2', startBeat: 224, duration: 4, velocity: 0.5 },
-        { note: 'E3', startBeat: 224, duration: 4, velocity: 0.45 },
-        { note: 'G3', startBeat: 224, duration: 4, velocity: 0.4 },
-        { note: 'B4', startBeat: 224, duration: 0.25, velocity: 0.68 },
-        { note: 'E5', startBeat: 224.25, duration: 0.25, velocity: 0.72 },
-        { note: 'G5', startBeat: 224.5, duration: 0.5, velocity: 0.75 },
-        { note: 'F#5', startBeat: 225, duration: 0.5, velocity: 0.7 },
-        { note: 'E5', startBeat: 225.5, duration: 0.5, velocity: 0.68 },
-        { note: 'D5', startBeat: 226, duration: 0.5, velocity: 0.65 },
-        { note: 'C5', startBeat: 226.5, duration: 0.5, velocity: 0.62 },
-        { note: 'B4', startBeat: 227, duration: 1, velocity: 0.68 },
+        // VARIATION 1: Rapid-fire arpeggios (224-232)
+        { note: 'A2', startBeat: 224, duration: 8, velocity: 0.55 },
+        { note: 'E3', startBeat: 224, duration: 8, velocity: 0.5 },
+        // Crazy fast arpeggio UP
+        { note: 'A4', startBeat: 224, duration: 0.125, velocity: 0.65 },
+        { note: 'C5', startBeat: 224.125, duration: 0.125, velocity: 0.68 },
+        { note: 'E5', startBeat: 224.25, duration: 0.125, velocity: 0.72 },
+        { note: 'A5', startBeat: 224.375, duration: 0.125, velocity: 0.78 },
+        { note: 'C6', startBeat: 224.5, duration: 0.25, velocity: 0.85 },
+        // Down
+        { note: 'A5', startBeat: 224.75, duration: 0.125, velocity: 0.75 },
+        { note: 'E5', startBeat: 224.875, duration: 0.125, velocity: 0.7 },
+        { note: 'C5', startBeat: 225, duration: 0.125, velocity: 0.65 },
+        { note: 'A4', startBeat: 225.125, duration: 0.125, velocity: 0.6 },
+        // SFORZANDO accent!
+        { note: 'E5', startBeat: 225.25, duration: 0.5, velocity: 0.95 },
+        { note: 'C5', startBeat: 225.25, duration: 0.5, velocity: 0.9 },
+        { note: 'A4', startBeat: 225.25, duration: 0.5, velocity: 0.85 },
+        // Syncopated continuation
+        { note: 'D5', startBeat: 225.75, duration: 0.25, velocity: 0.7 },
+        { note: 'E5', startBeat: 226.25, duration: 0.25, velocity: 0.72 },
+        { note: 'F5', startBeat: 226.5, duration: 0.25, velocity: 0.75 },
+        { note: 'E5', startBeat: 226.75, duration: 0.25, velocity: 0.72 },
+        { note: 'D5', startBeat: 227, duration: 0.25, velocity: 0.7 },
+        { note: 'C5', startBeat: 227.25, duration: 0.75, velocity: 0.78 },
 
-        { note: 'A2', startBeat: 228, duration: 4, velocity: 0.52 },
-        { note: 'E3', startBeat: 228, duration: 4, velocity: 0.48 },
-        { note: 'A3', startBeat: 228, duration: 4, velocity: 0.42 },
-        { note: 'C5', startBeat: 228, duration: 0.5, velocity: 0.65 },
-        { note: 'D5', startBeat: 228.5, duration: 0.5, velocity: 0.68 },
-        { note: 'E5', startBeat: 229, duration: 0.75, velocity: 0.72 },
-        { note: 'F#5', startBeat: 229.75, duration: 0.25, velocity: 0.68 },
-        { note: 'G5', startBeat: 230, duration: 1, velocity: 0.75 },
-        { note: 'F#5', startBeat: 231, duration: 0.5, velocity: 0.68 },
-        { note: 'E5', startBeat: 231.5, duration: 0.5, velocity: 0.65 },
+        // More arpeggios with octave jumps
+        { note: 'F2', startBeat: 228, duration: 4, velocity: 0.52 },
+        { note: 'C3', startBeat: 228, duration: 4, velocity: 0.48 },
+        { note: 'F5', startBeat: 228, duration: 0.125, velocity: 0.7 },
+        { note: 'A5', startBeat: 228.125, duration: 0.125, velocity: 0.75 },
+        { note: 'C6', startBeat: 228.25, duration: 0.25, velocity: 0.85 },
+        { note: 'A4', startBeat: 228.5, duration: 0.125, velocity: 0.6 }, // Octave drop!
+        { note: 'C5', startBeat: 228.625, duration: 0.125, velocity: 0.65 },
+        { note: 'F5', startBeat: 228.75, duration: 0.125, velocity: 0.7 },
+        { note: 'A5', startBeat: 228.875, duration: 0.125, velocity: 0.75 },
+        { note: 'F6', startBeat: 229, duration: 0.5, velocity: 0.92 }, // High peak!
+        { note: 'E6', startBeat: 229.5, duration: 0.25, velocity: 0.85 },
+        { note: 'D6', startBeat: 229.75, duration: 0.25, velocity: 0.8 },
+        { note: 'C6', startBeat: 230, duration: 0.25, velocity: 0.78 },
+        { note: 'B5', startBeat: 230.25, duration: 0.25, velocity: 0.75 },
+        { note: 'A5', startBeat: 230.5, duration: 0.25, velocity: 0.72 },
+        { note: 'G5', startBeat: 230.75, duration: 0.25, velocity: 0.7 },
+        { note: 'F5', startBeat: 231, duration: 1, velocity: 0.78 },
 
+        // VARIATION 2: Tremolo madness (232-240)
         { note: 'D3', startBeat: 232, duration: 4, velocity: 0.55 },
-        { note: 'F#3', startBeat: 232, duration: 4, velocity: 0.5 },
-        { note: 'A3', startBeat: 232, duration: 4, velocity: 0.45 },
-        { note: 'F#5', startBeat: 232, duration: 0.5, velocity: 0.72 },
-        { note: 'G5', startBeat: 232.5, duration: 0.5, velocity: 0.75 },
-        { note: 'A5', startBeat: 233, duration: 0.75, velocity: 0.8 },
-        { note: 'B5', startBeat: 233.75, duration: 0.25, velocity: 0.78 },
-        { note: 'A5', startBeat: 234, duration: 0.5, velocity: 0.75 },
-        { note: 'G5', startBeat: 234.5, duration: 0.5, velocity: 0.72 },
-        { note: 'F#5', startBeat: 235, duration: 1, velocity: 0.75 },
+        { note: 'A3', startBeat: 232, duration: 4, velocity: 0.5 },
+        // Tremolo between two notes
+        { note: 'D5', startBeat: 232, duration: 0.125, velocity: 0.72 },
+        { note: 'F5', startBeat: 232.125, duration: 0.125, velocity: 0.75 },
+        { note: 'D5', startBeat: 232.25, duration: 0.125, velocity: 0.72 },
+        { note: 'F5', startBeat: 232.375, duration: 0.125, velocity: 0.75 },
+        { note: 'D5', startBeat: 232.5, duration: 0.125, velocity: 0.78 },
+        { note: 'F5', startBeat: 232.625, duration: 0.125, velocity: 0.8 },
+        { note: 'D5', startBeat: 232.75, duration: 0.125, velocity: 0.82 },
+        { note: 'F5', startBeat: 232.875, duration: 0.125, velocity: 0.85 },
+        // Tremolo climax
+        { note: 'D5', startBeat: 233, duration: 0.125, velocity: 0.88 },
+        { note: 'A5', startBeat: 233, duration: 0.125, velocity: 0.88 }, // Add octave!
+        { note: 'F5', startBeat: 233.125, duration: 0.125, velocity: 0.9 },
+        { note: 'D5', startBeat: 233.25, duration: 0.125, velocity: 0.88 },
+        { note: 'A5', startBeat: 233.25, duration: 0.125, velocity: 0.88 },
+        { note: 'F5', startBeat: 233.375, duration: 0.125, velocity: 0.92 },
+        // Release into melody
+        { note: 'G5', startBeat: 233.5, duration: 0.5, velocity: 0.85 },
+        { note: 'F5', startBeat: 234, duration: 0.25, velocity: 0.78 },
+        { note: 'E5', startBeat: 234.25, duration: 0.25, velocity: 0.75 },
+        { note: 'D5', startBeat: 234.5, duration: 0.5, velocity: 0.72 },
+        { note: 'C5', startBeat: 235, duration: 1, velocity: 0.78 },
 
-        { note: 'G3', startBeat: 236, duration: 4, velocity: 0.52 },
-        { note: 'B3', startBeat: 236, duration: 4, velocity: 0.48 },
-        { note: 'D4', startBeat: 236, duration: 4, velocity: 0.42 },
-        { note: 'E5', startBeat: 236, duration: 1.5, velocity: 0.72 },
-        { note: 'D5', startBeat: 237.5, duration: 0.5, velocity: 0.65 },
-        { note: 'C5', startBeat: 238, duration: 0.75, velocity: 0.68 },
-        { note: 'B4', startBeat: 238.75, duration: 0.25, velocity: 0.62 },
-        { note: 'A4', startBeat: 239, duration: 1, velocity: 0.68 },
+        // Bass tremolo with melody
+        { note: 'E2', startBeat: 236, duration: 0.25, velocity: 0.58 },
+        { note: 'B2', startBeat: 236.25, duration: 0.25, velocity: 0.55 },
+        { note: 'E2', startBeat: 236.5, duration: 0.25, velocity: 0.58 },
+        { note: 'B2', startBeat: 236.75, duration: 0.25, velocity: 0.55 },
+        { note: 'E2', startBeat: 237, duration: 0.25, velocity: 0.6 },
+        { note: 'B2', startBeat: 237.25, duration: 0.25, velocity: 0.58 },
+        { note: 'E2', startBeat: 237.5, duration: 0.25, velocity: 0.62 },
+        { note: 'B2', startBeat: 237.75, duration: 0.25, velocity: 0.6 },
+        // Melody over tremolo
+        { note: 'E5', startBeat: 236, duration: 1, velocity: 0.8 },
+        { note: 'G#5', startBeat: 237, duration: 0.5, velocity: 0.82 },
+        { note: 'B5', startBeat: 237.5, duration: 1.5, velocity: 0.88 },
+        { note: 'A5', startBeat: 239, duration: 0.5, velocity: 0.8 },
+        { note: 'G#5', startBeat: 239.5, duration: 0.5, velocity: 0.78 },
 
-        { note: 'A3', startBeat: 240, duration: 8, velocity: 0.55 },
-        { note: 'E4', startBeat: 240, duration: 8, velocity: 0.5 },
-        { note: 'A4', startBeat: 240, duration: 0.5, velocity: 0.62 },
-        { note: 'C5', startBeat: 240.5, duration: 0.5, velocity: 0.65 },
-        { note: 'E5', startBeat: 241, duration: 0.5, velocity: 0.68 },
-        { note: 'A5', startBeat: 241.5, duration: 0.5, velocity: 0.72 },
-        { note: 'G5', startBeat: 242, duration: 0.5, velocity: 0.68 },
-        { note: 'E5', startBeat: 242.5, duration: 0.5, velocity: 0.65 },
-        { note: 'C5', startBeat: 243, duration: 0.5, velocity: 0.62 },
-        { note: 'A4', startBeat: 243.5, duration: 0.5, velocity: 0.6 },
-        { note: 'C5', startBeat: 244, duration: 0.5, velocity: 0.62 },
-        { note: 'E5', startBeat: 244.5, duration: 0.5, velocity: 0.65 },
-        { note: 'G5', startBeat: 245, duration: 0.5, velocity: 0.68 },
-        { note: 'A5', startBeat: 245.5, duration: 0.5, velocity: 0.72 },
-        { note: 'B5', startBeat: 246, duration: 0.5, velocity: 0.75 },
-        { note: 'C6', startBeat: 246.5, duration: 1.5, velocity: 0.82 },
+        // VARIATION 3: Cross-rhythm chaos (240-248)
+        { note: 'A2', startBeat: 240, duration: 8, velocity: 0.55 },
+        { note: 'E3', startBeat: 240, duration: 8, velocity: 0.5 },
+        { note: 'A3', startBeat: 240, duration: 8, velocity: 0.45 },
+        // 3 against 4 polyrhythm!
+        // Right hand in triplets
+        { note: 'E5', startBeat: 240, duration: 0.333, velocity: 0.75 },
+        { note: 'A5', startBeat: 240.333, duration: 0.333, velocity: 0.78 },
+        { note: 'C6', startBeat: 240.666, duration: 0.333, velocity: 0.82 },
+        { note: 'E5', startBeat: 241, duration: 0.333, velocity: 0.78 },
+        { note: 'A5', startBeat: 241.333, duration: 0.333, velocity: 0.8 },
+        { note: 'C6', startBeat: 241.666, duration: 0.333, velocity: 0.85 },
+        // Left hand counter-rhythm
+        { note: 'C4', startBeat: 240, duration: 0.5, velocity: 0.55 },
+        { note: 'E4', startBeat: 240.5, duration: 0.5, velocity: 0.58 },
+        { note: 'A4', startBeat: 241, duration: 0.5, velocity: 0.6 },
+        { note: 'C4', startBeat: 241.5, duration: 0.5, velocity: 0.55 },
+        // EXPLOSION!
+        { note: 'E6', startBeat: 242, duration: 0.5, velocity: 1.0 },
+        { note: 'C6', startBeat: 242, duration: 0.5, velocity: 0.95 },
+        { note: 'A5', startBeat: 242, duration: 0.5, velocity: 0.9 },
+        { note: 'E5', startBeat: 242, duration: 0.5, velocity: 0.85 },
+        // Cascade down
+        { note: 'D6', startBeat: 242.5, duration: 0.125, velocity: 0.85 },
+        { note: 'C6', startBeat: 242.625, duration: 0.125, velocity: 0.82 },
+        { note: 'B5', startBeat: 242.75, duration: 0.125, velocity: 0.8 },
+        { note: 'A5', startBeat: 242.875, duration: 0.125, velocity: 0.78 },
+        { note: 'G5', startBeat: 243, duration: 0.125, velocity: 0.75 },
+        { note: 'F5', startBeat: 243.125, duration: 0.125, velocity: 0.72 },
+        { note: 'E5', startBeat: 243.25, duration: 0.125, velocity: 0.7 },
+        { note: 'D5', startBeat: 243.375, duration: 0.125, velocity: 0.68 },
+        { note: 'C5', startBeat: 243.5, duration: 0.5, velocity: 0.72 },
+        // Build again
+        { note: 'D5', startBeat: 244, duration: 0.25, velocity: 0.7 },
+        { note: 'E5', startBeat: 244.25, duration: 0.25, velocity: 0.72 },
+        { note: 'F5', startBeat: 244.5, duration: 0.25, velocity: 0.75 },
+        { note: 'G5', startBeat: 244.75, duration: 0.25, velocity: 0.78 },
+        { note: 'A5', startBeat: 245, duration: 0.25, velocity: 0.8 },
+        { note: 'B5', startBeat: 245.25, duration: 0.25, velocity: 0.82 },
+        { note: 'C6', startBeat: 245.5, duration: 0.25, velocity: 0.85 },
+        { note: 'D6', startBeat: 245.75, duration: 0.25, velocity: 0.88 },
+        { note: 'E6', startBeat: 246, duration: 2, velocity: 0.95 },
 
-        { note: 'E2', startBeat: 248, duration: 8, velocity: 0.58 },
-        { note: 'B2', startBeat: 248, duration: 8, velocity: 0.52 },
-        { note: 'E3', startBeat: 248, duration: 8, velocity: 0.48 },
-        { note: 'B5', startBeat: 248, duration: 1, velocity: 0.8 },
-        { note: 'A5', startBeat: 249, duration: 0.5, velocity: 0.75 },
-        { note: 'G5', startBeat: 249.5, duration: 0.5, velocity: 0.72 },
-        { note: 'F#5', startBeat: 250, duration: 0.5, velocity: 0.7 },
-        { note: 'E5', startBeat: 250.5, duration: 0.5, velocity: 0.72 },
-        { note: 'F#5', startBeat: 251, duration: 0.5, velocity: 0.75 },
-        { note: 'G5', startBeat: 251.5, duration: 0.5, velocity: 0.78 },
-        { note: 'A5', startBeat: 252, duration: 1, velocity: 0.8 },
-        { note: 'B5', startBeat: 253, duration: 1, velocity: 0.85 },
-        { note: 'C6', startBeat: 254, duration: 1.5, velocity: 0.9 },
-        { note: 'B5', startBeat: 255.5, duration: 0.5, velocity: 0.82 },
+        // VARIATION 4: Dramatic octaves (248-256)
+        { note: 'E2', startBeat: 248, duration: 4, velocity: 0.6 },
+        { note: 'E3', startBeat: 248, duration: 4, velocity: 0.55 },
+        // Octave melody - POWERFUL
+        { note: 'E4', startBeat: 248, duration: 0.5, velocity: 0.75 },
+        { note: 'E5', startBeat: 248, duration: 0.5, velocity: 0.85 },
+        { note: 'F#4', startBeat: 248.5, duration: 0.5, velocity: 0.78 },
+        { note: 'F#5', startBeat: 248.5, duration: 0.5, velocity: 0.88 },
+        { note: 'G4', startBeat: 249, duration: 0.5, velocity: 0.8 },
+        { note: 'G5', startBeat: 249, duration: 0.5, velocity: 0.9 },
+        { note: 'A4', startBeat: 249.5, duration: 0.5, velocity: 0.82 },
+        { note: 'A5', startBeat: 249.5, duration: 0.5, velocity: 0.92 },
+        { note: 'B4', startBeat: 250, duration: 1, velocity: 0.85 },
+        { note: 'B5', startBeat: 250, duration: 1, velocity: 0.95 },
+        { note: 'A4', startBeat: 251, duration: 0.5, velocity: 0.8 },
+        { note: 'A5', startBeat: 251, duration: 0.5, velocity: 0.9 },
+        { note: 'G#4', startBeat: 251.5, duration: 0.5, velocity: 0.78 },
+        { note: 'G#5', startBeat: 251.5, duration: 0.5, velocity: 0.88 },
 
-        { note: 'A2', startBeat: 256, duration: 8, velocity: 0.6 },
-        { note: 'E3', startBeat: 256, duration: 8, velocity: 0.55 },
-        { note: 'A3', startBeat: 256, duration: 8, velocity: 0.5 },
-        { note: 'A5', startBeat: 256, duration: 0.5, velocity: 0.82 },
-        { note: 'G#5', startBeat: 256.5, duration: 0.5, velocity: 0.85 },
-        { note: 'A5', startBeat: 257, duration: 0.5, velocity: 0.88 },
-        { note: 'B5', startBeat: 257.5, duration: 0.5, velocity: 0.9 },
-        { note: 'C6', startBeat: 258, duration: 0.5, velocity: 0.92 },
-        { note: 'D6', startBeat: 258.5, duration: 0.5, velocity: 0.95 },
-        { note: 'E6', startBeat: 259, duration: 2, velocity: 1.0 },
-        { note: 'D6', startBeat: 261, duration: 0.5, velocity: 0.88 },
-        { note: 'C6', startBeat: 261.5, duration: 0.5, velocity: 0.85 },
-        { note: 'B5', startBeat: 262, duration: 1, velocity: 0.88 },
-        { note: 'A5', startBeat: 263, duration: 1, velocity: 0.85 },
+        { note: 'A2', startBeat: 252, duration: 4, velocity: 0.62 },
+        { note: 'E3', startBeat: 252, duration: 4, velocity: 0.58 },
+        // Dramatic leap up!
+        { note: 'A3', startBeat: 252, duration: 0.25, velocity: 0.7 },
+        { note: 'E6', startBeat: 252.25, duration: 0.75, velocity: 1.0 }, // HUGE JUMP!
+        { note: 'D6', startBeat: 253, duration: 0.5, velocity: 0.9 },
+        { note: 'C6', startBeat: 253.5, duration: 0.5, velocity: 0.88 },
+        { note: 'B5', startBeat: 254, duration: 0.5, velocity: 0.85 },
+        { note: 'A5', startBeat: 254.5, duration: 0.5, velocity: 0.82 },
+        { note: 'G5', startBeat: 255, duration: 0.5, velocity: 0.8 },
+        { note: 'F5', startBeat: 255.5, duration: 0.5, velocity: 0.78 },
 
-        { note: 'E3', startBeat: 264, duration: 8, velocity: 0.58 },
-        { note: 'G#3', startBeat: 264, duration: 8, velocity: 0.52 },
-        { note: 'B3', startBeat: 264, duration: 8, velocity: 0.48 },
-        { note: 'G#5', startBeat: 264, duration: 1, velocity: 0.85 },
-        { note: 'A5', startBeat: 265, duration: 1, velocity: 0.88 },
-        { note: 'B5', startBeat: 266, duration: 2, velocity: 0.92 },
-        { note: 'A5', startBeat: 268, duration: 1, velocity: 0.85 },
-        { note: 'G#5', startBeat: 269, duration: 1, velocity: 0.88 },
-        { note: 'A5', startBeat: 270, duration: 2, velocity: 0.92 },
+        // VARIATION 5: Final frenzy (256-272)
+        { note: 'D2', startBeat: 256, duration: 4, velocity: 0.65 },
+        { note: 'D3', startBeat: 256, duration: 4, velocity: 0.6 },
+        { note: 'F3', startBeat: 256, duration: 4, velocity: 0.55 },
+        // Rapid chromatic
+        { note: 'D5', startBeat: 256, duration: 0.125, velocity: 0.75 },
+        { note: 'D#5', startBeat: 256.125, duration: 0.125, velocity: 0.78 },
+        { note: 'E5', startBeat: 256.25, duration: 0.125, velocity: 0.8 },
+        { note: 'F5', startBeat: 256.375, duration: 0.125, velocity: 0.82 },
+        { note: 'F#5', startBeat: 256.5, duration: 0.125, velocity: 0.85 },
+        { note: 'G5', startBeat: 256.625, duration: 0.125, velocity: 0.88 },
+        { note: 'G#5', startBeat: 256.75, duration: 0.125, velocity: 0.9 },
+        { note: 'A5', startBeat: 256.875, duration: 0.125, velocity: 0.92 },
+        { note: 'A#5', startBeat: 257, duration: 0.125, velocity: 0.95 },
+        { note: 'B5', startBeat: 257.125, duration: 0.125, velocity: 0.98 },
+        { note: 'C6', startBeat: 257.25, duration: 0.75, velocity: 1.0 },
+        // Syncopated accents
+        { note: 'G5', startBeat: 258, duration: 0.25, velocity: 0.92 },
+        { note: 'C6', startBeat: 258, duration: 0.25, velocity: 0.92 },
+        { note: 'E5', startBeat: 258.5, duration: 0.25, velocity: 0.85 },
+        { note: 'A5', startBeat: 258.5, duration: 0.25, velocity: 0.85 },
+        { note: 'F5', startBeat: 259, duration: 0.25, velocity: 0.88 },
+        { note: 'A5', startBeat: 259, duration: 0.25, velocity: 0.88 },
+        { note: 'D5', startBeat: 259.5, duration: 0.5, velocity: 0.82 },
+        { note: 'F5', startBeat: 259.5, duration: 0.5, velocity: 0.82 },
+
+        { note: 'E2', startBeat: 260, duration: 4, velocity: 0.68 },
+        { note: 'B2', startBeat: 260, duration: 4, velocity: 0.62 },
+        { note: 'G#3', startBeat: 260, duration: 4, velocity: 0.58 },
+        // More fury
+        { note: 'E5', startBeat: 260, duration: 0.25, velocity: 0.88 },
+        { note: 'G#5', startBeat: 260, duration: 0.25, velocity: 0.88 },
+        { note: 'B5', startBeat: 260, duration: 0.25, velocity: 0.88 },
+        { note: 'F5', startBeat: 260.25, duration: 0.25, velocity: 0.85 },
+        { note: 'A5', startBeat: 260.25, duration: 0.25, velocity: 0.85 },
+        { note: 'E5', startBeat: 260.5, duration: 0.25, velocity: 0.9 },
+        { note: 'G#5', startBeat: 260.5, duration: 0.25, velocity: 0.9 },
+        { note: 'B5', startBeat: 260.5, duration: 0.25, velocity: 0.9 },
+        { note: 'D5', startBeat: 260.75, duration: 0.25, velocity: 0.85 },
+        { note: 'F5', startBeat: 260.75, duration: 0.25, velocity: 0.85 },
+        // Crescendo to climax
+        { note: 'E5', startBeat: 261, duration: 0.5, velocity: 0.92 },
+        { note: 'G#5', startBeat: 261, duration: 0.5, velocity: 0.92 },
+        { note: 'B5', startBeat: 261, duration: 0.5, velocity: 0.92 },
+        { note: 'E6', startBeat: 261.5, duration: 0.5, velocity: 0.98 },
+        { note: 'D6', startBeat: 262, duration: 0.5, velocity: 0.95 },
+        { note: 'B5', startBeat: 262.5, duration: 0.5, velocity: 0.92 },
+        { note: 'G#5', startBeat: 263, duration: 1, velocity: 0.9 },
+
+        // Final approach to climax
+        { note: 'A2', startBeat: 264, duration: 8, velocity: 0.7 },
+        { note: 'E3', startBeat: 264, duration: 8, velocity: 0.65 },
+        { note: 'A3', startBeat: 264, duration: 8, velocity: 0.6 },
+        { note: 'C4', startBeat: 264, duration: 8, velocity: 0.55 },
+        // Building tension
+        { note: 'A4', startBeat: 264, duration: 0.5, velocity: 0.8 },
+        { note: 'E5', startBeat: 264, duration: 0.5, velocity: 0.85 },
+        { note: 'B4', startBeat: 264.5, duration: 0.5, velocity: 0.82 },
+        { note: 'E5', startBeat: 264.5, duration: 0.5, velocity: 0.87 },
+        { note: 'C5', startBeat: 265, duration: 0.5, velocity: 0.85 },
+        { note: 'E5', startBeat: 265, duration: 0.5, velocity: 0.9 },
+        { note: 'D5', startBeat: 265.5, duration: 0.5, velocity: 0.88 },
+        { note: 'E5', startBeat: 265.5, duration: 0.5, velocity: 0.92 },
+        // FINAL PUSH!
+        { note: 'E5', startBeat: 266, duration: 0.25, velocity: 0.92 },
+        { note: 'A5', startBeat: 266.25, duration: 0.25, velocity: 0.95 },
+        { note: 'E5', startBeat: 266.5, duration: 0.25, velocity: 0.92 },
+        { note: 'B5', startBeat: 266.75, duration: 0.25, velocity: 0.98 },
+        { note: 'E5', startBeat: 267, duration: 0.25, velocity: 0.95 },
+        { note: 'C6', startBeat: 267.25, duration: 0.25, velocity: 1.0 },
+        { note: 'E5', startBeat: 267.5, duration: 0.25, velocity: 0.95 },
+        { note: 'D6', startBeat: 267.75, duration: 0.25, velocity: 1.0 },
+        // Climax prep
+        { note: 'E6', startBeat: 268, duration: 1, velocity: 1.0 },
+        { note: 'C6', startBeat: 268, duration: 1, velocity: 0.95 },
+        { note: 'A5', startBeat: 268, duration: 1, velocity: 0.9 },
+        { note: 'E5', startBeat: 268, duration: 1, velocity: 0.85 },
+        // Held tension
+        { note: 'D6', startBeat: 269, duration: 1, velocity: 0.95 },
+        { note: 'B5', startBeat: 269, duration: 1, velocity: 0.9 },
+        { note: 'G#5', startBeat: 269, duration: 1, velocity: 0.85 },
+        // Resolution to dominant
+        { note: 'E6', startBeat: 270, duration: 2, velocity: 1.0 },
+        { note: 'B5', startBeat: 270, duration: 2, velocity: 0.95 },
+        { note: 'G#5', startBeat: 270, duration: 2, velocity: 0.9 },
+        { note: 'E5', startBeat: 270, duration: 2, velocity: 0.85 },
     ];
 
     // ============ CLIMAX (272-304) ============
@@ -1194,7 +1346,9 @@
             osc.frequency.value = inharmonicFreq;
 
             // Harmonic amplitude falls off, but 2nd and 3rd are strong
-            let amp = velocity * 0.25 / Math.pow(n, 0.7);
+            // Frequency-based volume compensation (higher notes quieter like real piano)
+            const freqCompensation = Math.pow(261.63 / frequency, 0.25); // C4 = reference
+            let amp = velocity * 0.22 * freqCompensation / Math.pow(n, 0.7);
             if (n === 1) amp *= 1.2;
             if (n === 2) amp *= 1.1;
             if (n === 3) amp *= 0.9;
@@ -1231,7 +1385,8 @@
         noiseFilter.Q.value = 2;
 
         const noiseGain = audioCtx.createGain();
-        noiseGain.gain.value = velocity * 0.15;
+        const freqCompensation = Math.pow(261.63 / frequency, 0.25); // C4 = reference
+        noiseGain.gain.value = velocity * 0.12 * freqCompensation;
 
         noiseSrc.connect(noiseFilter);
         noiseFilter.connect(noiseGain);
