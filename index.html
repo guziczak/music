@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAND PIANO STUDIO - Masterpiece Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="brand">
+            <h1>Grand Piano Studio</h1>
+            <p class="tagline">Cinematic Composition Engine</p>
+            <div class="composition-title">
+                <h2>"Swiatlo w Ciemnosci"</h2>
+                <span>Original Composition - Op. 1</span>
+            </div>
+        </div>
+
+        <div class="piano-cabinet">
+            <div class="display-section">
+                <div class="visualizer-container">
+                    <div class="oscilloscope">
+                        <canvas id="oscilloscope"></canvas>
+                    </div>
+                    <div class="spectrum">
+                        <canvas id="spectrum"></canvas>
+                    </div>
+                </div>
+
+                <div class="now-playing">
+                    <div class="velocity-container">
+                        <span class="velocity-label">Velocity</span>
+                        <div class="velocity-meter">
+                            <div class="velocity-fill" id="velocityMeter"></div>
+                        </div>
+                    </div>
+                    <div class="section-display" id="sectionDisplay">Ready to Play</div>
+                    <div class="note-display" id="noteDisplay">&#9834;</div>
+                    <div class="velocity-container">
+                        <span class="velocity-label">Intensity</span>
+                        <div class="velocity-meter">
+                            <div class="velocity-fill" id="intensityMeter"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-progress" id="progressBar"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span>
+                        <span id="totalTime">0:00</span>
+                    </div>
+                </div>
+
+                <div class="section-markers">
+                    <div class="section-marker" id="marker-0">Prelude</div>
+                    <div class="section-marker" id="marker-1">Theme</div>
+                    <div class="section-marker" id="marker-2">Development</div>
+                    <div class="section-marker" id="marker-3">Variation</div>
+                    <div class="section-marker" id="marker-4">Climax</div>
+                    <div class="section-marker" id="marker-5">Recapitulation</div>
+                    <div class="section-marker" id="marker-6">Coda</div>
+                </div>
+            </div>
+
+            <div class="controls-row">
+                <button class="btn btn-primary" id="playBtn" onclick="togglePlay()">&#9654; Play</button>
+                <button class="btn btn-secondary" onclick="stopMelody()">&#9632; Stop</button>
+            </div>
+
+            <div class="keyboard-wrapper">
+                <div class="keyboard-frame">
+                    <div class="keyboard" id="keyboard"></div>
+                </div>
+            </div>
+
+            <div class="settings-panel">
+                <div class="setting">
+                    <div class="setting-header">
+                        <span class="setting-label">Tempo</span>
+                        <span class="setting-value" id="tempoValue">103 BPM</span>
+                    </div>
+                    <input type="range" id="tempoSlider" min="50" max="140" value="103" oninput="updateTempo(this.value)">
+                </div>
+
+                <div class="setting">
+                    <div class="setting-header">
+                        <span class="setting-label">Reverb</span>
+                        <span class="setting-value" id="reverbValue">Concert Hall</span>
+                    </div>
+                    <input type="range" id="reverbSlider" min="0" max="100" value="65" oninput="updateReverb(this.value)">
+                </div>
+
+                <div class="setting">
+                    <div class="setting-header">
+                        <span class="setting-label">Warmth</span>
+                        <span class="setting-value" id="warmthValue">Rich</span>
+                    </div>
+                    <input type="range" id="warmthSlider" min="0" max="100" value="75" oninput="updateWarmth(this.value)">
+                </div>
+
+                <div class="setting">
+                    <div class="setting-header">
+                        <span class="setting-label">Character</span>
+                    </div>
+                    <div class="toggle-group">
+                        <button class="toggle-btn" onclick="setPianoType('steinway')" id="typeSteinway">Steinway</button>
+                        <button class="toggle-btn" onclick="setPianoType('bosendorfer')" id="typeBosendorfer">Bosendorfer</button>
+                        <button class="toggle-btn active" onclick="setPianoType('yamaha')" id="typeYamaha">Yamaha</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pedal-row">
+                <div class="pedal-indicator">
+                    <div class="pedal-light" id="softLight"></div>
+                    <span class="pedal-text">Soft [S]</span>
+                </div>
+                <div class="pedal-indicator">
+                    <div class="pedal-light" id="sustainLight"></div>
+                    <span class="pedal-text">Sustain [Space]</span>
+                </div>
+                <div class="pedal-indicator">
+                    <div class="pedal-light" id="sostenutoLight"></div>
+                    <span class="pedal-text">Sostenuto [D]</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-title">Composition Details</div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Key</div>
+                    <div class="info-value" id="keyDisplay">A minor</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Time</div>
+                    <div class="info-value">4/4</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Form</div>
+                    <div class="info-value">Sonata</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Duration</div>
+                    <div class="info-value" id="durationDisplay">~2:30</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Mood</div>
+                    <div class="info-value" id="moodDisplay">Melancholic</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Dynamics</div>
+                    <div class="info-value" id="dynamicsDisplay">pp</div>
+                </div>
+            </div>
+            <div class="emotion-indicator">
+                <div class="emotion-label">Emotional Arc</div>
+                <div class="emotion-bar">
+                    <div class="emotion-fill" id="emotionFill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
