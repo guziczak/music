@@ -1345,6 +1345,22 @@
             osc.type = n <= 2 ? 'triangle' : 'sine';
             osc.frequency.value = inharmonicFreq;
 
+            // === PHASE NOISE / NATURAL VARIATION ===
+            // 1. Random micro-detuning (±3 cents) - each harmonic slightly different
+            const microDetune = (Math.random() - 0.5) * 6;
+            osc.detune.value = microDetune;
+
+            // 2. Subtle LFO modulation for "living" sound
+            const lfo = audioCtx.createOscillator();
+            const lfoGain = audioCtx.createGain();
+            lfo.type = 'sine';
+            lfo.frequency.value = 0.3 + Math.random() * 2.5; // 0.3-2.8 Hz random rate
+            lfoGain.gain.value = 1.5 + Math.random() * 2; // 1.5-3.5 cents wobble
+            lfo.connect(lfoGain);
+            lfoGain.connect(osc.detune);
+            lfo.start(when);
+            lfo.stop(when + duration + 5);
+
             // Harmonic amplitude falls off, but 2nd and 3rd are strong
             // Frequency-based volume compensation (higher notes quieter like real piano)
             const freqCompensation = Math.pow(261.63 / frequency, 0.4); // C4 = reference, stronger reduction for highs
@@ -1352,6 +1368,9 @@
             if (n === 1) amp *= 1.2;
             if (n === 2) amp *= 1.1;
             if (n === 3) amp *= 0.9;
+
+            // 3. Slight random amplitude variation per harmonic
+            amp *= 0.92 + Math.random() * 0.16; // ±8% variation
 
             // Each harmonic has different decay
             const harmDecay = (duration * sustainMult) / (1 + n * 0.15);
