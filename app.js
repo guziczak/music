@@ -1347,8 +1347,8 @@
 
             // Harmonic amplitude falls off, but 2nd and 3rd are strong
             // Frequency-based volume compensation (higher notes quieter like real piano)
-            const freqCompensation = Math.pow(261.63 / frequency, 0.25); // C4 = reference
-            let amp = velocity * 0.22 * freqCompensation / Math.pow(n, 0.7);
+            const freqCompensation = Math.pow(261.63 / frequency, 0.4); // C4 = reference, stronger reduction for highs
+            let amp = velocity * 0.2 * freqCompensation / Math.pow(n, 0.7);
             if (n === 1) amp *= 1.2;
             if (n === 2) amp *= 1.1;
             if (n === 3) amp *= 0.9;
@@ -1385,8 +1385,8 @@
         noiseFilter.Q.value = 2;
 
         const noiseGain = audioCtx.createGain();
-        const freqCompensation = Math.pow(261.63 / frequency, 0.25); // C4 = reference
-        noiseGain.gain.value = velocity * 0.12 * freqCompensation;
+        const freqCompensation2 = Math.pow(261.63 / frequency, 0.4); // C4 = reference
+        noiseGain.gain.value = velocity * 0.1 * freqCompensation2;
 
         noiseSrc.connect(noiseFilter);
         noiseFilter.connect(noiseGain);
