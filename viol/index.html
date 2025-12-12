@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violin - Swiatlo w Ciemnosci</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #1a0f0a 0%, #2d1810 50%, #1a0f0a 100%);
+            min-height: 100vh;
+            color: #DEB887;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #8B4513;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #DEB887;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #CD853F;
+            font-style: italic;
+        }
+
+        .instrument-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: #FFF8DC;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            letter-spacing: 2px;
+        }
+
+        .main-display {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .panel {
+            background: linear-gradient(145deg, #2d1810, #1a0f0a);
+            border: 1px solid #8B4513;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+
+        .panel-title {
+            font-size: 0.85em;
+            color: #CD853F;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #5C3317;
+            padding-bottom: 8px;
+        }
+
+        .note-display {
+            font-size: 4em;
+            text-align: center;
+            color: #DEB887;
+            text-shadow: 0 0 20px rgba(222, 184, 135, 0.5);
+            padding: 20px;
+        }
+
+        .section-info {
+            text-align: center;
+        }
+
+        .section-name {
+            font-size: 1.8em;
+            color: #DEB887;
+            margin-bottom: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            background: rgba(139, 69, 19, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 0.7em;
+            color: #A0522D;
+            text-transform: uppercase;
+        }
+
+        .info-value {
+            font-size: 1.1em;
+            color: #DEB887;
+            margin-top: 5px;
+        }
+
+        /* Strings Visualization */
+        .strings-container {
+            background: linear-gradient(180deg, #1a0f0a, #2d1810, #1a0f0a);
+            border-radius: 10px;
+            padding: 30px 20px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strings-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(139, 69, 19, 0.1) 0%, transparent 70%);
+        }
+
+        #strings {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .string-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .string-label {
+            width: 30px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #CD853F;
+            font-weight: bold;
+        }
+
+        .violin-string {
+            flex: 1;
+            height: 4px;
+            border-radius: 2px;
+            transition: all 0.1s ease;
+            box-shadow: 0 0 5px rgba(222, 184, 135, 0.3);
+        }
+
+        .violin-string.active {
+            height: 6px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(222, 184, 135, 0.4);
+        }
+
+        .violin-string.vibrating {
+            animation: vibrate 0.05s linear infinite;
+        }
+
+        @keyframes vibrate {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-2px); }
+            75% { transform: translateY(2px); }
+        }
+
+        /* Controls */
+        .controls-row {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: #FFF8DC;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.3em;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            font-family: inherit;
+        }
+
+        .play-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(139, 69, 19, 0.6);
+        }
+
+        .play-btn.active {
+            background: linear-gradient(135deg, #CD853F, #DEB887);
+            color: #1a0f0a;
+        }
+
+        .stop-btn {
+            background: linear-gradient(135deg, #5C3317, #8B4513);
+            color: #DEB887;
+            border: none;
+            padding: 18px 35px;
+            font-size: 1.1em;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .stop-btn:hover {
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+        }
+
+        /* Progress */
+        .progress-container {
+            background: rgba(26, 15, 10, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .progress-bar-bg {
+            height: 8px;
+            background: #2d1810;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        #progressBar {
+            height: 100%;
+            background: linear-gradient(90deg, #8B4513, #CD853F, #DEB887);
+            width: 0%;
+            transition: width 0.1s linear;
+            border-radius: 4px;
+        }
+
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #A0522D;
+        }
+
+        /* Section markers */
+        .section-markers {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+        }
+
+        .marker {
+            padding: 8px 16px;
+            background: rgba(139, 69, 19, 0.2);
+            border-radius: 15px;
+            font-size: 0.8em;
+            color: #A0522D;
+            transition: all 0.3s ease;
+        }
+
+        .marker.active {
+            background: linear-gradient(135deg, #8B4513, #CD853F);
+            color: #FFF8DC;
+            box-shadow: 0 0 15px rgba(205, 133, 63, 0.5);
+        }
+
+        /* Sliders */
+        .sliders-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .slider-container {
+            background: linear-gradient(145deg, #2d1810, #1a0f0a);
+            border: 1px solid #5C3317;
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .slider-label {
+            font-size: 0.75em;
+            color: #A0522D;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .slider-value {
+            color: #DEB887;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            -webkit-appearance: none;
+            background: #2d1810;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(135deg, #CD853F, #DEB887);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Visualizers */
+        .visualizers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .visualizer {
+            background: #0a0a0a;
+            border: 1px solid #5C3317;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .visualizer canvas {
+            width: 100%;
+            height: 120px;
+            display: block;
+        }
+
+        /* Meters */
+        .meters {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .meter {
+            background: rgba(26, 15, 10, 0.6);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .meter-label {
+            font-size: 0.7em;
+            color: #A0522D;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .meter-bar {
+            height: 10px;
+            background: #1a0f0a;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #5C3317, #8B4513, #CD853F);
+            width: 0%;
+            transition: width 0.1s ease;
+            border-radius: 5px;
+        }
+
+        /* Emotion meter */
+        .emotion-container {
+            margin-top: 20px;
+        }
+
+        .emotion-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75em;
+            color: #A0522D;
+            margin-bottom: 8px;
+        }
+
+        #emotionFill {
+            background: linear-gradient(90deg, #5C3317, #8B4513, #CD853F, #DEB887, #FFD700);
+        }
+
+        /* Composition info */
+        .composition-info {
+            text-align: center;
+            padding: 20px;
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .composition-title {
+            font-size: 1.1em;
+            color: #DEB887;
+            margin-bottom: 5px;
+        }
+
+        .composition-details {
+            font-size: 0.85em;
+            color: #A0522D;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #5C3317;
+            font-size: 0.85em;
+            border-top: 1px solid #5C3317;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .main-display {
+                grid-template-columns: 1fr;
+            }
+            .sliders-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .visualizers {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Swiatlo w Ciemnosci</h1>
+            <div class="subtitle">Light in the Darkness</div>
+            <div class="instrument-badge">VIOLIN SOLO</div>
+        </header>
+
+        <div class="main-display">
+            <div class="panel">
+                <div class="panel-title">Current Note</div>
+                <div class="note-display" id="noteDisplay">♪</div>
+                <div class="meters">
+                    <div class="meter">
+                        <div class="meter-label">Velocity</div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" id="velocityMeter"></div>
+                        </div>
+                    </div>
+                    <div class="meter">
+                        <div class="meter-label">Intensity</div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" id="intensityMeter"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel section-info">
+                <div class="panel-title">Now Playing</div>
+                <div class="section-name" id="sectionDisplay">Ready to Play</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Key</div>
+                        <div class="info-value" id="keyDisplay">A minor</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Mood</div>
+                        <div class="info-value" id="moodDisplay">Intensifying</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Dynamics</div>
+                        <div class="info-value" id="dynamicsDisplay">mf → ff</div>
+                    </div>
+                </div>
+                <div class="emotion-container">
+                    <div class="emotion-label">
+                        <span>Build-up</span>
+                        <span>Climax</span>
+                        <span>Resolution</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" id="emotionFill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">Composition</div>
+                <div class="composition-info">
+                    <div class="composition-title">"Swiatlo w Ciemnosci"</div>
+                    <div class="composition-details">
+                        Violin Arrangement<br>
+                        Duration: <span id="durationDisplay">~0:42</span><br>
+                        72 beats @ 103 BPM
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strings Visualization -->
+        <div class="strings-container">
+            <div id="strings"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls-row">
+            <button class="play-btn" id="playBtn" onclick="togglePlay()">▶ Play</button>
+            <button class="stop-btn" onclick="stopMelody()">◼ Stop</button>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-container">
+            <div class="section-markers">
+                <div class="marker" id="marker-0">Build-up</div>
+                <div class="marker" id="marker-1">Climax</div>
+                <div class="marker" id="marker-2">Recapitulation</div>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="progressBar"></div>
+            </div>
+            <div class="time-display">
+                <span id="currentTime">0:00</span>
+                <span id="totalTime">0:42</span>
+            </div>
+        </div>
+
+        <!-- Sliders -->
+        <div class="sliders-grid">
+            <div class="slider-container">
+                <label class="slider-label">Tempo</label>
+                <div class="slider-value" id="tempoValue">103 BPM</div>
+                <input type="range" min="60" max="140" value="103" onchange="updateTempo(this.value)">
+            </div>
+            <div class="slider-container">
+                <label class="slider-label">Reverb</label>
+                <div class="slider-value" id="reverbValue">Concert Hall</div>
+                <input type="range" min="0" max="100" value="70" onchange="updateReverb(this.value)">
+            </div>
+            <div class="slider-container">
+                <label class="slider-label">Brightness</label>
+                <div class="slider-value" id="brightnessValue">Balanced</div>
+                <input type="range" min="0" max="100" value="60" onchange="updateBrightness(this.value)">
+            </div>
+            <div class="slider-container">
+                <label class="slider-label">Vibrato</label>
+                <div class="slider-value" id="vibratoValue">Expressive</div>
+                <input type="range" min="0" max="100" value="70" onchange="updateVibrato(this.value)">
+            </div>
+        </div>
+
+        <!-- Visualizers -->
+        <div class="visualizers">
+            <div class="visualizer">
+                <canvas id="oscilloscope"></canvas>
+            </div>
+            <div class="visualizer">
+                <canvas id="spectrum"></canvas>
+            </div>
+        </div>
+
+        <footer>
+            Violin Synthesis Engine | "Swiatlo w Ciemnosci" - Climax Edition
+        </footer>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
