@@ -1,0 +1,26 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    libsndfile1 \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install DDSP and dependencies - use older pip for ddsp compatibility
+RUN pip install pip==24.0 && \
+    pip install "numpy<2" && \
+    pip install tensorflow==2.10.0 && \
+    pip install tensorflow-probability==0.18.0 && \
+    pip install ddsp==3.5.0 && \
+    pip install pretty_midi soundfile
+
+# Copy the DDSP-Piano code
+COPY ddsp-piano /app/ddsp-piano
+
+WORKDIR /app/ddsp-piano
+
+# Set entrypoint
+ENTRYPOINT ["python", "synthesize_midi_file.py"]
